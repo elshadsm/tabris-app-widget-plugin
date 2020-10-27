@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="tabris-app-widget-plugin"
+        version="1.0.0">
+
+  <name>Tabris.js App Widget Plugin</name>
+  <description>Custom App(Homescreen) Widget for Tabris.js</description>
+  <author>Elshad Seyidmammadov</author>
+  <license>Revised BSD License (3-clause license)</license>
+  <repo>https://github.com/elshadsm/tabris-app-widget-plugin.git</repo>
+  <issue>https://github.com/elshadsm/tabris-app-widget-plugin/issues</issue>
+
+  <js-module src="www/TabrisAppWidget.js" name="appwidget">
+    <clobbers target="appwidget.Widget" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+      <uses-permission android:name="android.permission.INTERNET" />
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <receiver android:name="com.elshadsm.appwidget.TabrisAppWidgetProvider" >
+        <intent-filter>
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+        </intent-filter>
+
+        <meta-data
+          android:name="android.appwidget.provider"
+          android:resource="@xml/app_widget_info" />
+      </receiver>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <meta-data
+          android:name="com.eclipsesource.tabris.android.HANDLER.com.elshadsm.appwidget"
+          android:value="com.elshadsm.appwidget.TabrisAppWidgetHandler" />
+    </config-file>
+    
+    <source-file src="src/android/com/elshadsm/appwidget/TabrisAppWidgetHandler.kt"
+      target-dir="src/com/elshadsm/appwidget" />
+    <source-file src="src/android/com/elshadsm/appwidget/TabrisAppWidgetProvider.kt"
+      target-dir="src/com/elshadsm/appwidget" />
+    <source-file src="src/android/com/elshadsm/appwidget/TabrisAppWidget.kt"
+      target-dir="src/com/elshadsm/appwidget" />
+    <source-file src="src/android/com/elshadsm/appwidget/CounterProperty.kt"
+      target-dir="src/com/elshadsm/appwidget" />
+    <source-file src="src/android/com/elshadsm/appwidget/AppWidgetUtil.kt"
+      target-dir="src/com/elshadsm/appwidget" />
+
+    <resource-file
+      src="project/android/appwidget/src/main/res/layout/app_widget.xml"
+      target="res/layout/app_widget.xml" />
+    <resource-file
+      src="project/android/appwidget/src/main/res/xml/app_widget_info.xml"
+      target="res/xml/app_widget_info.xml" />
+    <resource-file
+      src="project/android/appwidget/src/main/res/drawable-nodpi/example_appwidget_preview.png"
+      target="res/drawable-nodpi/example_appwidget_preview.png" />
+
+  </platform>
+
+</plugin>

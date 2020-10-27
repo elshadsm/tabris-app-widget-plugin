@@ -1,0 +1,3 @@
+include 'appwidget'
+
+rootProject.name = 'tabris-app-widget-plugin'

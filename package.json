@@ -1,0 +1,42 @@
+{
+  "name": "tabris-app-widget-plugin",
+  "version": "1.0.0",
+  "description": "Custom App(Homescreen) Widget for Tabris.js",
+  "types": "./types/index.d.ts",
+  "cordova": {
+    "id": "tabris-app-widget-plugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elshadsm/tabris-app-widget-plugin.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "tabris",
+    "tabris.js",
+    "widget",
+    "app",
+    "homescreen",
+    "android"
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "1.0.0": {
+        "cordova-android": ">=8.0.0"
+      }
+    }
+  },
+  "devDependencies": {
+    "tabris": "nightly"
+  },
+  "author": "Elshad Seyidmammadov",
+  "license": "Revised BSD License (3-clause license)",
+  "bugs": {
+    "url": "https://github.com/elshadsm/tabris-app-widget-plugin/issues"
+  },
+  "homepage": "https://github.com/elshadsm/tabris-app-widget-plugin#readme"
+}
