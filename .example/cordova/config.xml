@@ -16,7 +16,7 @@
   </plugin>
   
   <plugin name="tabris-plugin-launchmonitor" spec="https://github.com/eclipsesource/tabris-plugin-launchmonitor.git" />
-  <plugin name="tabris-app-widget-plugin" spec="https://github.com/elshadsm/tabris-app-widget-plugin.git" />
+  <plugin name="tabris-plugin-app-widget" spec="https://github.com/elshadsm/tabris-plugin-app-widget.git" />
 
   <platform name="android">
     <edit-config file="app/src/main/AndroidManifest.xml" target="/manifest/application" mode="merge">
