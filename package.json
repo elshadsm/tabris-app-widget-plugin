@@ -18,10 +18,12 @@
     "cordova-android",
     "tabris",
     "tabris.js",
+    "appwidget",
     "widget",
     "app",
     "homescreen",
-    "android"
+    "android",
+    "custom"
   ],
   "engines": {
     "cordovaDependencies": {

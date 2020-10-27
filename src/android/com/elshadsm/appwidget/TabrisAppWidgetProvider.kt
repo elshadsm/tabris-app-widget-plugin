@@ -58,10 +58,7 @@ internal fun updateActions(context: Context, remoteViews: RemoteViews) {
   updateAction(context, remoteViews, ACTION_OPEN_APP, openAppId)
 }
 
-internal fun updateAction(context: Context,
-                          remoteViews: RemoteViews,
-                          action: String,
-                          viewId: Int) {
+internal fun updateAction(context: Context, remoteViews: RemoteViews, action: String, viewId: Int) {
   val intent = Intent(context, TabrisAppWidgetProvider::class.java).apply {
     this.action = action
   }
